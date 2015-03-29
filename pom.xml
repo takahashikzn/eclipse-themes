@@ -4,7 +4,7 @@
   <parent>
     <groupId>io.takari.tycho</groupId>
     <artifactId>tycho-support</artifactId>
-    <version>0.15.0</version>
+    <version>1.1.0</version>
   </parent>  
   <groupId>net.jeeeyul.eclipse.themes</groupId>
   <artifactId>eclipse-themes-parent</artifactId>
@@ -12,7 +12,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <repositoryPathId>eclipse-themes</repositoryPathId>
+    <repositoryPathId>eclipse-themes-mars</repositoryPathId>
     <p2MetadataName>eclipse-themes</p2MetadataName>
     <xtendVersion>2.7.2</xtendVersion>
   </properties>

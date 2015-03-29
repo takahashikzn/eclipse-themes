@@ -9,4 +9,32 @@
   </parent>
   <artifactId>net.jeeeyul.eclipse.themes.repository</artifactId>
   <packaging>eclipse-repository</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho.extras</groupId>
+        <artifactId>tycho-p2-extras-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>mirror</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <latestVersionOnly>true</latestVersionOnly>
+          <ius>
+            <iu><id>net.jeeeyul.swtend</id></iu>
+          </ius>
+          <source>
+            <repository>
+              <url>http://eclipse.jeeeyul.net/update/</url>
+              <layout>p2</layout>
+            </repository>
+          </source>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>  
 </project>
