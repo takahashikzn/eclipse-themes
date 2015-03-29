@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.takari.tycho</groupId>
+    <artifactId>tycho-support</artifactId>
+    <version>0.15.0</version>
+  </parent>  
+  <groupId>net.jeeeyul.eclipse.themes</groupId>
+  <artifactId>eclipse-themes-parent</artifactId>
+  <version>2.2.0-SNAPSHOT</version>  
+  <packaging>pom</packaging>
+
+  <properties>
+    <repositoryPathId>eclipse-themes</repositoryPathId>
+    <p2MetadataName>eclipse-themes</p2MetadataName>
+    <xtendVersion>2.7.2</xtendVersion>
+  </properties>
+
+  <modules>
+    <module>net.jeeeyul.eclipse.themes</module>
+    <module>net.jeeeyul.eclipse.themes.ui</module>
+    <module>net.jeeeyul.eclipse.themes.feature</module>
+    <module>net.jeeeyul.eclipse.themes.repository</module>    
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>xtend-maven-plugin</artifactId>
+          <version>${xtendVersion}</version>
+          <!--
+          This plugin is pretty terrible. By default it generates into src/main which is
+          just dumb and then if you configure a different outputDirectory all compilation
+          breaks so we have to comment it out and just clean up what it generates...
+          -->
+          <configuration>
+            <outputDirectory>${basedir}/target/generated-sources/xtend</outputDirectory>
+          </configuration>                         
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>      
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <repositories>
+   <repository>
+     <id>swtend</id>
+     <layout>p2</layout>
+     <url>http://eclipse.jeeeyul.net/update/</url>
+   </repository>	
+  </repositories>
+</project>
